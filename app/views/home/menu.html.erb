@@ -1,0 +1,36 @@
+<h1> Menu </h1>
+
+<%= Section.searchType.each do |section| %>
+	<div class="btn-group" role="group" aria-label="Basic example">
+	  <%= link_to section, menu_path(searchType: section), class: 'btn btn-secondary' %>
+	</div>
+<% end %>
+<br>
+<br>
+<br>
+<%= Section.all.each do |section| %>
+	<div class="btn-group" role="group" aria-label="Basic example">
+	  <%= link_to section, menu_path(section: section), class: 'btn btn-secondary' %>
+	</div>
+<% end %>
+<div class = "list-group">
+<%= @food_items.each do |food_items| %>
+	<div class="list-group-item">
+
+		<!-- <div >
+			<span class="label label-default label-pill pull-xs-right">14</span>
+			<div class="card-header"><%= food_items.name %></div>
+		</div> -->
+
+		<button type="button" class="list-group-item">
+	    	<span class="label label-default label-pill pull-xs-right">
+	    		<%= food_items.Price %>
+	    	</span>
+	    	<div><%= food_items.name %></div>
+	  	</button>
+		<!-- <div class = "card-block">
+			<%= image_tag food_items.remote_image_url %>
+		</div> -->
+	</div>
+<% end %>
+</div>

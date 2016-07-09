@@ -42,3 +42,11 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'rails-assets-tether', '>= 1.1.0'
+gem 'coffee-script-source', '1.8.0'
+
+gem 'rails_12factor'
+
+gem 'wdm'
+gem 'faker', '~> 1.6', '>= 1.6.3'
