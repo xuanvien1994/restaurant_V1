@@ -49,5 +49,4 @@ gem 'coffee-script-source', '1.8.0'
 gem 'rails_12factor'
 
 gem 'wdm'
-gem 'faker', '~> 1.6', '>= 1.6.3'
-gem 'ratyrate'
+gem 'faker'
