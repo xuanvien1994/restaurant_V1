@@ -14,4 +14,8 @@ class FoodItem < ApplicationRecord
 	def self.search(search)
 	    where("name LIKE ?", "%#{search}%") 
 	end
+
+	def self.getOrder(getOrder)
+	    where("name LIKE ?", "%#{getOrder}%") 
+	end
 end

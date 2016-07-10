@@ -1,36 +1,51 @@
 <h1> Menu </h1>
 
-<%= Section.searchType.each do |section| %>
-	<div class="btn-group" role="group" aria-label="Basic example">
-	  <%= link_to section, menu_path(searchType: section), class: 'btn btn-secondary' %>
-	</div>
-<% end %>
-<br>
-<br>
-<br>
-<%= Section.all.each do |section| %>
-	<div class="btn-group" role="group" aria-label="Basic example">
-	  <%= link_to section, menu_path(section: section), class: 'btn btn-secondary' %>
-	</div>
-<% end %>
+
+<div class="btn-group" role="group" aria-label="Basic example">
+  <%= link_to 'Breakfast', menu_path(section: 'Breakfast'), class: 'btn btn-secondary' %>
+</div>
+<div class="btn-group" role="group" aria-label="Basic example">
+  <%= link_to 'Lunch', menu_path(section: 'Lunch'), class: 'btn btn-secondary' %>
+</div>
+<div class="btn-group" role="group" aria-label="Basic example">
+  <%= link_to 'Dinner', menu_path(section: 'Dinner'), class: 'btn btn-secondary' %>
+</div>
+<div class="btn-group" role="group" aria-label="Basic example">
+  <%= link_to 'Supper', menu_path(section: 'Supper	'), class: 'btn btn-secondary' %>
+</div>
+<div class="btn-group" role="group" aria-label="Basic example">
+  <%= link_to 'created_at DES', menu_path(searchType: 'created_at'), class: 'btn btn-secondary btn-green' %>
+</div>
+<div class="btn-group" role="group" aria-label="Basic example">
+  <%= link_to 'Price DES', menu_path(searchType: 'Price'), class: 'btn btn-secondary btn-green' %>
+</div>
+
 <div class = "list-group">
+<br>
+
 <%= @food_items.each do |food_items| %>
-	<div class="list-group-item">
+	<div class = "grid">
+			<div ="grid-item col-md-4">
 
-		<!-- <div >
-			<span class="label label-default label-pill pull-xs-right">14</span>
-			<div class="card-header"><%= food_items.name %></div>
-		</div> -->
+				<button type="button" class="list-group-item">
+			    	<span class="label label-default label-pill pull-xs-right">
+			    		<%= food_items.Price %>
+			    	</span>
+			    	<div><%= food_items.name %></div>
+			    	
+			  	</button>
+			  	<div class = "card-block">
+						<%= image_tag food_items.remote_image_url %>
+					</div>
+					<div class="card-block" role="group" aria-label="Basic example">
+				  <%= link_to 'Order Now', new_order_path(getOrder: food_items.name), class: 'btn btn-secondary btn-green' %>
+					</div>
+				</div>
+				
+			</div>
 
-		<button type="button" class="list-group-item">
-	    	<span class="label label-default label-pill pull-xs-right">
-	    		<%= food_items.Price %>
-	    	</span>
-	    	<div><%= food_items.name %></div>
-	  	</button>
-		<!-- <div class = "card-block">
-			<%= image_tag food_items.remote_image_url %>
-		</div> -->
-	</div>
-<% end %>
+
+	<% end %>
+		
+	
 </div>

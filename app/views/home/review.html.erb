@@ -1,0 +1,39 @@
+<h1>Thanks for your order, We will deliver to you soon</h1>
+
+<div class = "row">
+	
+	<div class = "grid">
+			<div ="grid-item col-md-4">
+
+				<button type="button" class="list-group-item">
+			    	<span class="label label-default label-pill pull-xs-right">
+			    		<%= @ordernum.name %>
+			    	</span>
+			    	<div><%= @ordernum.phone_number %></div>
+			    	<div><%= @ordernum.address %></div>
+			    	
+			  	</button>
+				
+			</div>
+	<%= @food_items.each do |food_items| %>
+	<div class = "grid">
+			<div ="grid-item col-md-4">
+
+				<button type="button" class="list-group-item">
+			    	<span class="label label-default label-pill pull-xs-right">
+			    		<%= food_items.Price %>
+			    	</span>
+			    	<div><%= food_items.name %></div>
+			    	
+			  	</button>
+			  	<div class = "card-block">
+						<%= image_tag food_items.remote_image_url %>
+					</div>
+					
+				</div>
+				
+			</div>
+
+
+	<% end %>
+</div>

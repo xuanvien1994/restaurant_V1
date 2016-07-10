@@ -50,3 +50,4 @@ gem 'rails_12factor'
 
 gem 'wdm'
 gem 'faker', '~> 1.6', '>= 1.6.3'
+gem 'ratyrate'
